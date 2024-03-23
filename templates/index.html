@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        label {
+            font-weight: bold;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="button"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>House Price Prediction</h1>
+        <form id="predictionForm">
+            <label for="property_type">Property Type:</label>
+            <select id="property_type" name="property_type">
+                <option value="Flat">Flat</option>
+                <option value="House">House</option>
+                <option value="Penthouse">Penthouse</option>
+                <!-- Add more options if needed -->
+            </select><br>
+            <label for="baths">Number of Baths:</label>
+            <select id="baths" name="baths">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <!-- Add more options if needed -->
+            </select><br>
+            <label for="bedrooms">Number of Bedrooms:</label>
+            <select id="bedrooms" name="bedrooms">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <!-- Add more options if needed -->
+            </select><br>
+            <label for="total_area">Total Area (sq ft):</label>
+            <select id="total_area" name="total_area">
+                <option value="500">500 sq ft</option>
+                <option value="1000">1000 sq ft</option>
+                <option value="1500">1500 sq ft</option>
+                <option value="2000">2000 sq ft</option>
+                <!-- Add more options if needed -->
+            </select><br>
+            <input type="button" onclick="predictPrice()" value="Predict Price">
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function predictPrice() {
+            // Fetch user input values
+            const property_type = document.getElementById('property_type').value;
+            const baths = parseInt(document.getElementById('baths').value);
+            const bedrooms = parseInt(document.getElementById('bedrooms').value);
+            const total_area = parseFloat(document.getElementById('total_area').value);
+
+            // You can perform validation here if needed
+
+            // Placeholder for prediction logic
+            // Replace this with actual prediction code
+            const predictedPrice = Math.random() * 1000000; // Example random price
+
+            // Display the predicted price
+            document.getElementById('result').innerText = `Predicted Price: $${predictedPrice.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
+
